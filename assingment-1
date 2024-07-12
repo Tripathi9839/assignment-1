@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+ \usepackage{graphicx}
+ \usepackage{titling}
+
+ \title{Data imputation techniques with case study and codes (python).
+}
+\author{Harsh Tripathi}
+\date{July 12}
+ 
+ \usepackage{fancyhdr}
+\fancypagestyle{plain}{%  the preset of fancyhdr 
+    \fancyhf{} % clear all header and footer fields
+    \fancyfoot[R]{\includegraphics[width=2cm]{KULEUVEN_GENT_RGB_LOGO.png}}
+    \fancyfoot[L]{\thedate}
+    \fancyhead[L]{Description of Assignment}
+    \fancyhead[R]{\theauthor}
+}
+\makeatletter
+\def\@maketitle{%
+  \newpage
+  \null
+  \vskip 1em%
+  \begin{center}%
+  \let \footnote \thanks
+    {\LARGE \@title \par}%
+    \vskip 1em%
+    %{\large \@date}%
+  \end{center}%
+  \par
+  \vskip 1em}
+\makeatother
+
+\usepackage{lipsum}  
+\usepackage{cmbright}
+
+\begin{document}
+
+\maketitle
+
+\noindent\begin{tabular}{@{}ll}
+    Student & \theauthor\\
+     Professor & Dr . Saurabh Gupta \\
+     Roll No. & 22111020 \\
+\end{tabular}
+
+\section*{1. Mean/Median/Mode Imputation}
+
+\lipsum[Description: This technique involves replacing missing values with the mean, median, or mode of the column.
+Case Study: Consider a dataset of house prices where some values of the "Lot Area" feature are missing.
+]
+\section*{}
+\section*{}
+\section*{
+ Describe 8 data imputation techniques with case study and codes (python).
+ChatGPT
+Data imputation is crucial in handling missing data in datasets to maintain the integrity of data analysis and modeling. Here are eight data imputation techniques, along with case studies and Python code examples for each:
+
+Mean/Median/Mode Imputation
+K-Nearest Neighbors Imputation
+Multivariate Imputation by Chained Equations (MICE)
+Regression Imputation
+Hot Deck Imputation
+Predictive Mean Matching
+Random Forest Imputation
+Deep Learning Imputation (e.g., Autoencoders)
+Let's explore each technique in detail:
+
+1. Mean/Median/Mode Imputation
+Description: This technique involves replacing missing values with the mean, median, or mode of the column.
+
+Case Study: Consider a dataset of house prices where some values of the "Lot Area" feature are missing.
+
+Code:
+
+python
+Copy code
+import pandas as pd
+import numpy as np
+
+# Sample dataset
+data = {'Lot Area': [8500, np.nan, 9600, 11250, np.nan, 9550]}
+df = pd.DataFrame(data)
+
+# Mean Imputation
+df['Lot Area Mean'] = df['Lot Area'].fillna(df['Lot Area'].mean())
+
+# Median Imputation
+df['Lot Area Median'] = df['Lot Area'].fillna(df['Lot Area'].median())
+
+# Mode Imputation
+df['Lot Area Mode'] = df['Lot Area'].fillna(df['Lot Area'].mode()[0])
+
+print(df)
+2. K-Nearest Neighbors Imputation}
+\lipsum[import pandas as pd
+import numpy as np
+
+# Sample dataset
+data = {'Lot Area': [8500, np.nan, 9600, 11250, np.nan, 9550]}
+df = pd.DataFrame(data)
+
+# Mean Imputation
+df['Lot Area Mean'] = df['Lot Area'].fillna(df['Lot Area'].mean())
+
+# Median Imputation
+df['Lot Area Median'] = df['Lot Area'].fillna(df['Lot Area'].median())
+
+# Mode Imputation
+df['Lot Area Mode'] = df['Lot Area'].fillna(df['Lot Area'].mode()[0])
+
+print(df)
+]
+
+\section*{Plan}
+\lipsum[4-4]
+
+
+
+\end{document}
